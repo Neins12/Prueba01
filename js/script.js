@@ -1,9 +1,9 @@
-// Variables globales para almacenar datos y controlar la paginación
+
 let allCountries = [];
 let filteredCountries = [];
 let displayedCount = 12;
 
-// Función para mostrar las tarjetas de países
+
 function displayCountries(countries) {
   const mainContent = document.getElementById('mainContent');
   mainContent.innerHTML = '';
@@ -15,12 +15,12 @@ function displayCountries(countries) {
     mainContent.appendChild(card);
   });
 
-  // Mostrar o ocultar el botón "Mostrar más"
+
   const loadMoreBtn = document.getElementById('loadMore');
   loadMoreBtn.style.display = countries.length > displayedCount ? 'block' : 'none';
 }
 
-// Función para filtrar países según la búsqueda
+
 function filterCountries() {
   const searchTerm = document.getElementById('searchInput').value.toLowerCase();
   if (searchTerm) {
@@ -34,7 +34,7 @@ function filterCountries() {
   displayCountries(filteredCountries);
 }
 
-// Web Component para cada tarjeta de país (vista resumen)
+
 class CountryCard extends HTMLElement {
   constructor() {
     super();
@@ -99,7 +99,7 @@ class CountryCard extends HTMLElement {
       </div>
     `;
 
-    // Al hacer clic, se abre el modal detallado
+
     this.shadowRoot.querySelector('.card').addEventListener('click', () => {
       openDetailModal(this.country);
     });
@@ -108,7 +108,7 @@ class CountryCard extends HTMLElement {
 
 customElements.define('country-card', CountryCard);
 
-// Función para abrir el modal de detalles y llenar la información
+
 function openDetailModal(country) {
   document.getElementById('detailCountryName').textContent = country.name.common;
   document.getElementById('officialName').textContent = country.name.official;
@@ -130,7 +130,6 @@ function openDetailModal(country) {
   document.getElementById('detailModal').style.display = 'flex';
 }
 
-// Eventos para cerrar el modal de detalles
 document.querySelector('.detail-modal .close').addEventListener('click', () => {
   document.getElementById('detailModal').style.display = 'none';
 });
@@ -151,7 +150,7 @@ fetch('https://restcountries.com/v3.1/all')
   })
   .catch(error => console.error('Error al obtener los países:', error));
 
-// Eventos para el buscador y botón "Mostrar más"
+
 document.getElementById('searchInput').addEventListener('input', filterCountries);
 document.getElementById('loadMore').addEventListener('click', () => {
   displayedCount += 12;
