@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reto JS - Lista de Países</title>
+  <!-- Google Fonts para un estilo limpio -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" 
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <!-- Sección HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Reto JS - Countries</h1>
+      <p>Explora datos de países alrededor del mundo</p>
+    </div>
+  </section>
+
+  <!-- Header con menú de navegación -->
+  <header id="header">
+    <nav>
+      <ul class="menu">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#mainContent">Países</a></li>
+        <li><a href="#footer">Acerca de</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main id="content">
+    <!-- Buscador -->
+    <div id="search-container">
+      <input type="text" id="searchInput" placeholder="Buscar país..." />
+    </div>
+    <!-- Grilla de tarjetas -->
+    <section id="mainContent"></section>
+    <!-- Botón para cargar más países -->
+    <div id="loadMoreContainer">
+      <button id="loadMore">Mostrar más</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>© 2025 - Reto JS</p>
+  </footer>
+
+  <!-- Modal para la vista detallada -->
+  <div id="detailModal" class="detail-modal">
+    <div class="detail-modal-content">
+      <span class="close">&times;</span>
+      <h2 id="detailCountryName">Nombre del País</h2>
+      <!-- Sección 1: Datos Generales -->
+      <section class="general">
+        <h3>Datos Generales</h3>
+        <ul>
+          <li><strong>Nombre oficial:</strong> <span id="officialName"></span></li>
+          <li><strong>Capital:</strong> <span id="capital"></span></li>
+          <li><strong>Región:</strong> <span id="region"></span></li>
+          <li><strong>Subregión:</strong> <span id="subregion"></span></li>
+        </ul>
+      </section>
+      <!-- Sección 2: Demografía y Geografía -->
+      <section class="demografia">
+        <h3>Demografía y Geografía</h3>
+        <ul>
+          <li><strong>Población:</strong> <span id="population"></span></li>
+          <li><strong>Área:</strong> <span id="area"></span></li>
+          <li><strong>Coordenadas:</strong> <span id="latlng"></span></li>
+          <li><strong>Fronteras:</strong> <span id="borders"></span></li>
+          <li><strong>Fusos Horarios:</strong> <span id="timezones"></span></li>
+        </ul>
+      </section>
+      <!-- Sección 3: Cultura y Comunicación -->
+      <section class="cultura">
+        <h3>Cultura y Comunicación</h3>
+        <ul>
+          <li><strong>Idiomas:</strong> <span id="languages"></span></li>
+          <li><strong>Monedas:</strong> <span id="currencies"></span></li>
+        </ul>
+      </section>
+      <!-- Sección 4: Otros Datos -->
+      <section class="otros">
+        <h3>Otros Datos</h3>
+        <ul>
+          <li><strong>Códigos:</strong> <span id="codes"></span></li>
+          <li>
+            <strong>Bandera:</strong>
+            <img id="flagImage" src="" alt="Bandera del país" />
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
